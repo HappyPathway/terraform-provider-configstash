@@ -1,8 +1,9 @@
 // provider.go
-package provider
+package main
 
 import (
 	"context"
+
 	"github.com/google/go-github/v33/github"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"golang.org/x/oauth2"
@@ -19,7 +20,7 @@ func New() *schema.Provider {
 			},
 		},
 		ResourcesMap: map[string]*schema.Resource{
-			"configstash_file": resourceFile(),
+			"configstash_record": resourceRecord(),
 		},
 		ConfigureFunc: providerConfigure,
 	}

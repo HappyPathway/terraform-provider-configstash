@@ -1,5 +1,5 @@
 // resource_file.go
-package provider
+package main
 
 import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
@@ -7,10 +7,10 @@ import (
 
 func resourceRecord() *schema.Resource {
 	return &schema.Resource{
-		Create: resourceFileCreate,
-		Read:   resourceFileRead,
-		Update: resourceFileUpdate,
-		Delete: resourceFileDelete,
+		Create: resourceRecordCreate,
+		Read:   resourceRecordRead,
+		Update: resourceRecordUpdate,
+		Delete: resourceRecordDelete,
 
 		Schema: map[string]*schema.Schema{
 			"repository": {
